@@ -1,0 +1,41 @@
+<div
+  class="relative flex flex-col items-center justify-start min-h-screen overflow-hidden  text-[#3AA8AD]
+         bg-[#212f3d]
+">
+
+  <!--class="relative flex flex-col items-center justify-start min-h-screen overflow-hidden  
+         bg-gradient-to-br from-slate-900 via-white/70 to-slate-950 
+         bg-[length:200%_200%] animate-metallic" -->
+
+  <!-- CAPA DE REFLEJOS SUAVES -->
+  <div
+    class="absolute inset-0 bg-gradient-to-tr from-white/100 via-transparent to-white/50 
+           opacity-40 mix-blend-overlay pointer-events-none">
+  </div>
+
+  <!-- PARTÍCULAS RANDOM -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <div
+      *ngFor="let particle of particles"
+      class="absolute rounded-full animate-float blur-[1px] bg-primary"
+      [ngStyle]="{
+        width: particle.size + 'px',
+        height: particle.size + 'px',
+        top: particle.top + '%',
+        left: particle.left + '%',
+        animationDelay: particle.delay + 's'
+      }">
+    </div>
+  </div>
+
+<!-- CONTENEDOR PRINCIPAL PARA APILAR COMPONENTES -->
+<div class="relative z-10 w-full flex flex-col items-center py-20">
+  
+  <app-home class="w-full"></app-home>
+
+  <app-perfil class="w-full"></app-perfil>
+
+  <app-experiencia class="w-full"></app-experiencia>
+
+</div>
+</div>

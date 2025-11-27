@@ -1,0 +1,55 @@
+
+<div class="w-full min-h-screen flex items-center justify-center px-6 py-16">
+  
+
+  <div class="w-full max-w-6xl bg-card/60 backdrop-blur-xl border border-primary/20 rounded-3xl p-8 md:p-12 shadow-[0_0_60px_-15px_rgba(58,168,173,0.3)] animate-fadeIn">
+    
+    <div class="grid grid-cols-1 md:grid-cols-[65%_35%] gap-10 items-center">
+
+      <!-- TEXTO SOBRE MÍ -->
+      <div class="order-2 md:order-1"> <!-- En móvil el texto baja, en PC sube a la izq (opcional) -->
+        
+        <h1 class="text-3xl md:text-5xl font-bold text-typography-title mb-6 tracking-tight">
+          Sobre <span class="text-primary">mí</span>
+        </h1>
+
+        <p class="text-typography-body leading-relaxed text-base md:text-lg text-justify">
+          Soy <span class="font-bold text-primary">Ingeniero de Sistemas y Desarrollador Full Stack</span>,
+          apasionado por transformar ideas en soluciones tecnológicas eficientes y escalables. A lo largo de mi
+          experiencia he construido aplicaciones web combinando herramientas y frameworks tanto de front-end como de
+          back-end, enfocándome siempre en la arquitectura, la calidad del código y las buenas prácticas.
+          <br /><br />
+          Me caracterizo por mi compromiso, responsabilidad y pensamiento crítico, cualidades que aplico en cada
+          proyecto para asegurar entregas oportunas y resultados sólidos. Disfruto enfrentar nuevos retos técnicos,
+          optimizar procesos y aportar al crecimiento de los equipos con los que trabajo.
+          <br /><br />
+          Mi enfoque está en crear software limpio, mantenible y orientado a resolver problemas reales, aportando valor
+          tanto a los usuarios como a la organización. Creo firmemente en el aprendizaje continuo, la innovación y en el
+          poder de la tecnología para convertir ideas en impacto.
+        </p>
+      </div>
+
+      <!-- IMAGEN DEL PERFIL -->
+      <div class="flex justify-center order-1 md:order-2">
+        <!-- 
+           Contenedor de imagen:
+           border-4 border-primary/10: Un anillo suave de tu color alrededor.
+           shadow-2xl: Sombra profunda para dar volumen.
+        -->
+        <div
+          class="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full p-2 border-2 border-dashed border-primary/30">
+            <!-- Círculo interior sólido -->
+            <div class="w-full h-full rounded-full overflow-hidden shadow-2xl shadow-black/50 border border-primary/50">
+                <img src="assets/images/perfil.png" alt="Mi foto" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" />
+            </div>
+            
+            <!-- (Opcional) Pequeño detalle decorativo flotante -->
+            <div class="absolute bottom-4 right-4 bg-background border border-primary text-primary text-xs px-3 py-1 rounded-full shadow-lg">
+                &lt;Dev/&gt;
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
