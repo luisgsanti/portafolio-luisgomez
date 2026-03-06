@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../components/home/home.component';
 import { PerfilComponent } from '../components/perfil/perfil.component';
 import { ExperienciaComponent } from "../components/experiencia/experiencia.component";
+import { ProyectosComponent } from "../components/proyectos/proyectos.component";
 
 interface Particle {
   top: number;
@@ -15,7 +16,7 @@ interface Particle {
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [HomeComponent, CommonModule, PerfilComponent, ExperienciaComponent],
+  imports: [HomeComponent, CommonModule, PerfilComponent, ExperienciaComponent, ProyectosComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })

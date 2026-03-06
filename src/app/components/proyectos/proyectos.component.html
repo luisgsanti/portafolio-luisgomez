@@ -1,0 +1,87 @@
+<!-- SECCIÓN PROYECTOS -->
+<div class="w-full min-h-screen flex items-center justify-center px-6 py-16 ">
+
+  <div
+    class="w-full max-w-6xl bg-card/60 backdrop-blur-xl border border-primary/20 rounded-3xl p-8 md:p-12 shadow-[0_0_60px_-15px_rgba(58,168,173,0.3)] animate-fadeIn">
+
+    <!-- TÍTULO -->
+    <h1 class="text-3xl md:text-5xl font-bold text-typography-title mb-4 text-center tracking-tight">
+      Mis <span class="text-primary">Proyectos</span>
+    </h1>
+    <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 text-lg">
+      Una selección de las soluciones tecnológicas que he construido.
+    </p>
+
+    <!-- GRID DINÁMICA -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- BUCLE FOR DE ANGULAR (Versión 17+) -->
+      @for (project of projects; track project.title) {
+        
+        <div class="group relative bg-card/60 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(58,168,173,0.3)] transition-all duration-300 flex flex-col h-full">
+          
+          <!-- 1. IMAGEN -->
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
+            <!-- Si no hay imagen, muestra un placeholder elegante -->
+            @if (project.image) {
+                <img [src]="project.image" [alt]="project.title" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+            } @else {
+                <div class="flex items-center justify-center h-full text-slate-500">
+                    <i class="fa-solid fa-code text-4xl opacity-50"></i>
+                </div>
+            }
+          </div>
+
+          <!-- 2. CONTENIDO -->
+          <div class="p-6 flex flex-col flex-grow">
+            
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-typography-title group-hover:text-primary transition-colors line-clamp-1">
+                {{ project.title }}
+              </h3>
+              <i class="fa-solid fa-folder-open text-slate-500 group-hover:text-primary transition-colors mt-1"></i>
+            </div>
+
+            <p class="text-typography-body text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+              {{ project.description }}
+            </p>
+
+            <!-- STACK TECNOLÓGICO (Dinámico con colores) -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              @for (tech of project.techStack; track tech) {
+                <span [class]="'px-2 py-1 text-xs font-medium border rounded ' + getTechClass(tech)">
+                  {{ tech }}
+                </span>
+              }
+            </div>
+
+            <!-- 3. BOTONES -->
+            <div class="flex gap-4 mt-auto pt-4 border-t border-white/5">
+              @if (project.githubLink) {
+                <a [href]="project.githubLink" target="_blank" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors">
+                <i class="fa-brands fa-github text-lg"></i> Código
+              </a>
+            }
+              @if (project.demoLink) {
+                <a [href]="project.demoLink" target="_blank" class="flex items-center gap-2 text-sm text-slate-300 hover:text-primary transition-colors ml-auto">
+                Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+
+      } <!-- Fin del for -->
+
+    </div>
+
+    <!-- BOTÓN FINAL -->
+    <div class="mt-12 text-center">
+        <a href="https://github.com/luisgsanti" target="_blank" class="inline-block px-8 py-3 rounded-xl border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 group">
+            Ver más en GitHub <i class="fa-brands fa-github ml-2 group-hover:rotate-12 transition-transform"></i>
+        </a>
+    </div>
+
+  </div>
+</div>
