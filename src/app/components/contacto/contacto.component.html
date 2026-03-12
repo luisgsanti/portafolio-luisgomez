@@ -1,0 +1,90 @@
+<section id="contacto" class="w-full min-h-screen flex items-center justify-center px-6 py-16">
+  <div class="w-full max-w-6xl bg-card/60 backdrop-blur-xl border border-primary/20 rounded-3xl p-8 md:p-12 shadow-[0_0_60px_-15px_rgba(58,168,173,0.3)] animate-fadeIn">
+    <h1 class="text-3xl md:text-5xl font-bold text-typography-title mb-4 text-center tracking-tight">
+      Ponte en <span class="text-primary">Contacto</span>
+    </h1>
+
+    <p class="text-typography-body text-center max-w-2xl mx-auto mb-10 md:mb-12 text-sm md:text-base">
+      Si quieres colaborar en un proyecto, contratar mis servicios o conversar sobre una idea, escríbeme y te responderé lo antes posible.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 md:gap-10 items-start">
+      <div class="space-y-4">
+        <div class="rounded-2xl p-5 flex items-center justify-center">
+          <img
+            src="assets/images/Logo_Portafolio.png"
+            alt="Logo Luis Gómez"
+            class="w-24 md:w-24 drop-shadow-2xl" />
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-wider text-typography-muted mb-2">Correo de contacto</p>
+          <p class="text-sm md:text-base text-typography-title break-all">{{ emailDestino }}</p>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-wider text-typography-muted mb-2">Disponibilidad</p>
+          <p class="text-sm md:text-base text-typography-body">Disponible para proyectos freelance y oportunidades laborales remotas o híbridas.</p>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-wider text-typography-muted mb-2">Respuesta estimada</p>
+          <p class="text-sm md:text-base text-typography-body">Generalmente respondo en menos de 24 horas.</p>
+        </div>
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="enviarCorreo()" class="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="nombre" class="block text-sm text-typography-title mb-1">Nombre completo</label>
+            <input id="nombre" type="text" formControlName="nombre" class="contact-input" placeholder="Tu nombre" />
+            <p *ngIf="(f.nombre.touched || formSubmitted) && f.nombre.invalid" class="contact-error">
+              Ingresa un nombre válido (mínimo 3 caracteres).
+            </p>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm text-typography-title mb-1">Correo electrónico</label>
+            <input id="email" type="email" formControlName="email" class="contact-input" placeholder="tu@email.com" />
+            <p *ngIf="(f.email.touched || formSubmitted) && f.email.invalid" class="contact-error">
+              Ingresa un correo válido.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <label for="asunto" class="block text-sm text-typography-title mb-1">Asunto</label>
+          <input id="asunto" type="text" formControlName="asunto" class="contact-input" placeholder="Ej: Propuesta de colaboración" />
+          <p *ngIf="(f.asunto.touched || formSubmitted) && f.asunto.invalid" class="contact-error">
+            El asunto debe tener entre 4 y 120 caracteres.
+          </p>
+        </div>
+
+        <div class="mt-4">
+          <label for="mensaje" class="block text-sm text-typography-title mb-1">Mensaje</label>
+          <textarea id="mensaje" rows="6" formControlName="mensaje" class="contact-input resize-none" placeholder="Cuéntame sobre tu proyecto o propuesta..."></textarea>
+          <p *ngIf="(f.mensaje.touched || formSubmitted) && f.mensaje.invalid" class="contact-error">
+            El mensaje debe tener mínimo 10 caracteres.
+          </p>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+          <button type="submit" [disabled]="isSending" class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm md:text-base font-semibold text-white hover:bg-primary-hover transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
+            <i class="fa-solid fa-paper-plane"></i>
+            {{ isSending ? 'Enviando...' : 'Enviar correo' }}
+          </button>
+          <p class="text-xs text-typography-muted">
+            El mensaje se enviará directamente desde el formulario.
+          </p>
+        </div>
+
+        <p *ngIf="sendSuccess" class="mt-4 text-sm text-emerald-300">
+          Mensaje enviado correctamente. Te responderé pronto.
+        </p>
+        <p *ngIf="sendError" class="mt-4 text-sm text-rose-300">
+          {{ sendError }}
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

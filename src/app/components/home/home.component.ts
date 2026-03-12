@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
-
 
 @Component({
   selector: 'app-home',
@@ -12,11 +9,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
-
-  
-
-  irAPortafolio() {
-    this.router.navigate(['/portafolio']);
-  }
+  cvUrl = 'https://drive.google.com/file/d/1Sq7aEWOGgy3jaddGJJgzuoyqDtOgkBp3/view?usp=sharing';
 }

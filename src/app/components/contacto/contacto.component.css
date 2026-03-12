@@ -1,0 +1,26 @@
+.contact-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-title);
+  padding: 0.7rem 0.9rem;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.contact-input::placeholder {
+  color: var(--text-muted);
+}
+
+.contact-input:focus {
+  border-color: var(--color-primary);
+  background: rgba(58, 168, 173, 0.08);
+  box-shadow: 0 0 0 2px rgba(58, 168, 173, 0.2);
+}
+
+.contact-error {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: #fda4af;
+}

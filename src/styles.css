@@ -41,5 +41,15 @@
 body {
   background-color: var(--bg-main);
   color: var(--text-body);
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

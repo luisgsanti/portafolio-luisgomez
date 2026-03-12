@@ -1,60 +1,48 @@
-<!-- CONTENEDOR PRINCIPAL 
-     bg-background: Aplica tu color #212f3d
-     overflow-hidden: Para evitar scrollbars si los brillos se salen
--->
-<div class="min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden relative">
+<div class="relative min-h-[calc(100svh-10rem)] px-4 py-2 text-center sm:py-4">
   
   <!-- (Opcional) Efecto de luz ambiental de fondo -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-0 pointer-events-none"></div>
+  <div class="pointer-events-none absolute left-1/2 top-0 -z-0 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-primary/10 blur-[90px] sm:h-[420px] sm:w-[420px] md:h-[500px] md:w-[500px]"></div>
 
-  <!-- Logo + Sombra de Neón -->
-  <div class="relative flex flex-col items-center mb-10 z-10">
-    <img src="../../../assets/images/Logo_Portafolio.png" alt="Logo Luis Gómez" class="w-52 md:w-72 relative z-10 drop-shadow-2xl" />
+  <div class="relative z-10 flex min-h-[calc(100svh-11rem)] w-full flex-col items-center justify-center">
+    <!-- Logo + Sombra de Neón -->
+    <div class="relative mb-4 flex flex-col items-center sm:mb-6">
+      <img src="../../../assets/images/Logo_Portafolio.png" alt="Logo Luis Gómez"
+        class="relative z-10 w-28 drop-shadow-2xl sm:w-36 md:w-44 lg:w-60" />
 
-    <!-- 
-       Sombra REAL visible modificada:
-       Antes: shadow negro. 
-       Ahora: shadow cyan/teal para efecto de levitación tecnológica.
-       bg-primary/20: Es tu color principal con transparencia.
-    -->
-    <div class="mt-[-12px] w-52 h-6 rounded-[100%] bg-primary/20 shadow-[0_0_40px_20px_rgba(58,168,173,0.4)]"></div>
-  </div>
+      <div class="mt-[-10px] h-4 w-32 rounded-[100%] bg-primary/20 shadow-[0_0_30px_16px_rgba(58,168,173,0.35)] sm:h-5 sm:w-40 md:h-6 md:w-52"></div>
+    </div>
 
-  <!-- Nombre -->
-  <h1 class="text-3xl md:text-5xl font-bold text-typography-title tracking-tight z-10">
-    LUIS EDUARDO GÓMEZ SANTIAGO
-  </h1>
-  
-  <!-- Cargo / Subtítulo -->
-  <h2 class="text-xl md:text-2xl font-medium text-primary mt-2 tracking-wide uppercase z-10">
-    Ingeniero de Sistemas
-  </h2>
+    <!-- Nombre -->
+    <h1 class="z-10 text-2xl font-bold leading-tight tracking-tight text-typography-title sm:text-3xl md:text-5xl">
+      LUIS EDUARDO GÓMEZ SANTIAGO
+    </h1>
+    
+    <!-- Cargo / Subtítulo -->
+    <h2 class="z-10 mt-1 text-sm font-medium uppercase tracking-wide text-primary sm:text-base md:text-lg">
+      Ingeniero de Sistemas
+    </h2>
 
-  <!-- Descripción -->
-  <p class="text-typography-body max-w-xl mt-6 text-base md:text-lg leading-relaxed z-10">
-    Construyo soluciones innovadoras con <span class="text-primary/80 font-semibold">código limpio</span> y diseño eficiente.
-  </p>
+    <!-- Descripción -->
+    <p class="z-10 mt-3 max-w-xl text-sm leading-relaxed text-typography-body sm:mt-4 sm:text-base md:text-[1.03rem]">
+      Construyo soluciones innovadoras con <span class="font-semibold text-primary/80">código limpio</span> y diseño eficiente.
+    </p>
 
-  <!-- Botón principal 
-       hover:shadow-[...] -> Efecto de brillo al pasar el mouse
-       hover:brightness-110 -> Hace que el color resalte más en lo oscuro
-  -->
-  <button (click)="irAPortafolio()"
-    class="mt-10 bg-primary text-white font-semibold px-8 py-3 rounded-xl shadow-[0_0_15px_rgba(58,168,173,0.4)] hover:shadow-[0_0_25px_rgba(58,168,173,0.6)] hover:bg-primary-hover hover:-translate-y-1 transition-all duration-300 z-10">
-    Ver Portafolio
-  </button>
-
-  <!-- Redes sociales -->
-  <div class="flex gap-8 mt-12 text-2xl z-10">
-    <!-- Iconos: Empiezan en un gris apagado y se encienden al pasar el mouse -->
-    <a href="https://twitter.com/" target="_blank" class="text-typography-muted hover:text-primary hover:scale-110 transition-all duration-300">
-      <i class="fa-brands fa-twitter"></i>
+    <a [href]="cvUrl" target="_blank" rel="noopener noreferrer"
+      class="z-10 mt-4 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_15px_rgba(58,168,173,0.4)] transition-all duration-300 hover:-translate-y-1 hover:bg-primary-hover hover:shadow-[0_0_25px_rgba(58,168,173,0.6)] sm:mt-5 sm:px-6 sm:py-2.5 sm:text-base">
+      <i class="fa-solid fa-file-arrow-down"></i>
+      Descargar Curriculum
     </a>
-    <a href="https://linkedin.com/" target="_blank" class="text-typography-muted hover:text-primary hover:scale-110 transition-all duration-300">
-      <i class="fa-brands fa-linkedin-in"></i>
-    </a>
-    <a href="https://github.com/" target="_blank" class="text-typography-muted hover:text-primary hover:scale-110 transition-all duration-300">
-      <i class="fa-brands fa-github"></i>
-    </a>
+
+    <!-- Redes sociales -->
+    <div class="z-10 mt-5 flex gap-6 text-xl sm:mt-6 sm:gap-8 sm:text-2xl">
+      <!-- Iconos: Empiezan en un gris apagado y se encienden al pasar el mouse -->
+
+      <a href="https://www.linkedin.com/in/ingluisegomez3006" target="_blank" rel="noopener noreferrer" class="text-typography-muted transition-all duration-300 hover:scale-110 hover:text-primary">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/luisgsanti" target="_blank" rel="noopener noreferrer" class="text-typography-muted transition-all duration-300 hover:scale-110 hover:text-primary">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
   </div>
 </div>
