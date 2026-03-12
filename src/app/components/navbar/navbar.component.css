@@ -1,0 +1,47 @@
+:host {
+  display: block;
+}
+
+.nav-logo {
+  transition: transform 220ms ease;
+}
+
+.nav-logo:hover {
+  transform: translateY(-1px);
+}
+
+.nav-link {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--text-body);
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.2rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.nav-link-active {
+  color: var(--text-title);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link-active::after {
+  transform: scaleX(1);
+}

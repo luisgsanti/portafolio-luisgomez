@@ -53,3 +53,56 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* Reveal on scroll */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  filter: blur(3px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Microinteracciones reutilizables */
+.interactive-card {
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(77, 205, 211, 0.45);
+  box-shadow: 0 22px 45px -24px rgba(58, 168, 173, 0.55);
+}
+
+.interactive-button {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    filter 220ms ease;
+}
+
+.interactive-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal,
+  .interactive-card,
+  .interactive-button {
+    transition: none;
+    transform: none;
+    filter: none;
+  }
+}
