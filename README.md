@@ -1,3 +1,112 @@
+# Portafolio Luis Gomez
+
+Portafolio profesional desarrollado con Angular y Tailwind CSS para presentar perfil, experiencia, proyectos y un formulario de contacto funcional.
+
+## Demo
+
+- Produccion: [https://portafolio-luisgomez.web.app/](https://portafolio-luisgomez.web.app/)
+
+## Caracteristicas principales
+
+- Diseno moderno, responsivo y consistente en todas las secciones.
+- Navegacion fija con scroll suave entre secciones.
+- Secciones: Inicio, Sobre mi, Experiencia, Proyectos, Contacto y Footer.
+- Carrusel de proyectos con controles y barra de progreso.
+- Formulario de contacto con validaciones y envio directo por EmailJS.
+- Microinteracciones y animaciones para mejorar experiencia de usuario.
+
+## Stack tecnologico
+
+- Angular 18 (standalone components)
+- TypeScript
+- Tailwind CSS
+- Font Awesome
+- Firebase Hosting (deploy)
+- EmailJS (envio de mensajes desde formulario)
+
+## Instalacion y ejecucion local
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/luisgsanti/portafolio-luisgomez.git
+cd portafolio-luisgomez
+```
+
+2. Instala dependencias:
+
+```bash
+npm install
+```
+
+3. Ejecuta en modo desarrollo:
+
+```bash
+npm start
+```
+
+4. Abre en navegador:
+
+```txt
+http://localhost:4200
+```
+
+## Scripts disponibles
+
+- `npm start`: inicia servidor de desarrollo.
+- `npm run build`: genera build de produccion.
+- `npm run watch`: build continuo en modo desarrollo.
+- `npm test`: ejecuta pruebas unitarias.
+
+## Configuracion de contacto (EmailJS)
+
+El componente de contacto usa configuracion desde `environment`:
+
+- `src/environments/environment.ts`
+- `src/environments/environment.development.ts`
+
+Campos requeridos:
+
+- `serviceId`
+- `templateId`
+- `publicKey`
+- `allowedDomains`
+- `emailDestino`
+
+### Recomendaciones de seguridad
+
+- Restringe los dominios permitidos en el panel de EmailJS.
+- Manten `localhost` solo para desarrollo.
+- Para produccion, permite unicamente tu dominio final.
+
+## Estructura base del proyecto
+
+```txt
+src/
+  app/
+    components/
+      home/
+      perfil/
+      experiencia/
+      proyectos/
+      contacto/
+      navbar/
+      footer/
+  environments/
+  styles.css
+  index.html
+```
+
+## Roadmap corto
+
+- Mejorar README con capturas o GIF del sitio.
+- Ajustar pruebas unitarias a comportamiento real del portafolio.
+- Seguir optimizando SEO tecnico y accesibilidad.
+
+## Autor
+
+Luis Eduardo Gomez Santiago  
+Ingeniero de Sistemas - Desarrollador Full Stack
 https://portafolio-luisgomez.web.app/
 # PortafolioLuisgomez
 
